@@ -1,0 +1,1 @@
+select app_name, partition from application_partition

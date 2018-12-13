@@ -1,0 +1,1 @@
+select userid, userentity, isgroup from superuser_permissions order by userid

@@ -1,0 +1,1 @@
+[{"name":"A","type":"INTEGER","size":4},{"name":"B","type":"CHAR","size":1},{"name":"C","type":"STRING","size":3},{"name":"D","type":"FLOAT","size":4}]

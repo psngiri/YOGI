@@ -1,0 +1,1 @@
+select user_id,id_name,partition,version,description,comments,action,data,modified_by_user_id from ${TableName} where type = 'UserPreferences'

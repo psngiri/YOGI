@@ -1,0 +1,12 @@
+[
+{"type":"INTEGER","name":"ID","size":4},
+{"type":"STRING","name":"Carrier","size":2},
+{"type":"STRING","name":"FlightNumber","size":4},
+{"type":"STRING","name":"DepartureAiport","size":3},
+{"type":"STRING","name":"ArrivalAirport","size":3},
+{"type":"STRING","name":"Equipment","size":3},
+{"type":"SHORT","name":"DepartureTime","size":2},
+{"type":"SHORT","name":"ArrivalTime","size":2},
+{"type":"INTEGER","name":"ElapsedTime","size":4},
+{"type":"FLOAT","name":"GCDMiles","size":4}
+]

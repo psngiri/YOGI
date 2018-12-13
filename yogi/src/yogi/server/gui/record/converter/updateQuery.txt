@@ -1,0 +1,1 @@
+UPDATE ${TableName} set data = ? where user_id = ? and id_name = ? and partition = ? and type = ? and version = ?

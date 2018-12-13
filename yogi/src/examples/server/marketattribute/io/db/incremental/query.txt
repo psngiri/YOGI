@@ -1,0 +1,1 @@
+select ACTION,TMST,MODIFIED_BY_USER_ID,MARKET,ATTRIBUTE from ${tableType}_market_attributes where TMST >= ${lastExecutionTime} and TMST < ${endExecutionTime}

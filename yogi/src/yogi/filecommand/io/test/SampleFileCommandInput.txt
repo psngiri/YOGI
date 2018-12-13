@@ -1,0 +1,4 @@
+file1,command1,${fileName} arg1 arg2 arg3
+file2,command2,arg1 ${fileName} arg2
+file3,command3,arg1 arg2 ${fileName}
+file4,command3,arg1 arg2 arg3

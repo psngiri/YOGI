@@ -1,0 +1,29 @@
+{
+    "AA/I": {
+        "properties": {
+            "col1": "iaa1",
+            "col2": "iaa2"
+        }
+    },
+    "AA/": {
+        "properties": {
+            "col1": "aa1",
+            "col2": "aa2",
+            "QueryTool.*.col3": "aa3",
+            "*.MarketAttribute.col4": "aa4",
+            "*.*.col5": "aa5"
+        }
+    },
+    "AA/D": {
+        "properties": {
+            "col1": "daa1",
+            "col2": "daa2"
+        }
+    },
+    "BA/": {
+        "properties": {
+            "col1": "ba1",
+            "col2": "ba2"
+        }
+    }
+}

@@ -1,0 +1,1 @@
+insert into ${TableName} (type,user_id,id_name,create_date,version,description,comments,partition,action,data,modified_by_user_id) values('UserPreferences',?,?,?,?,?,?,?,?,?,?)

@@ -1,0 +1,17 @@
+INSERT
+INTO ${TableName}_market_attributes
+  (
+   	ACTION,
+   	TMST,
+   	MODIFIED_BY_USER_ID,
+   	MARKET,
+   	ATTRIBUTE
+  )
+  VALUES
+  (
+    ?,
+    ?,
+    ?,
+    ?,    
+    ?
+  )

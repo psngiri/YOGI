@@ -1,0 +1,5 @@
+delete from ${tableType}_MARKET_ATTRIBUTES where TMST=?
+and CARRIER_CODE = ?
+and ORIGIN_CITY = ?
+and DESTINATION_CITY = ?
+and TARIFF_NBR = ?

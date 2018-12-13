@@ -1,0 +1,1 @@
+select ANL_EMP_ID,ANL_FST_NM,ANL_LST_NM from analyst

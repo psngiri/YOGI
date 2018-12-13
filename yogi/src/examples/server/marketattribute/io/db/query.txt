@@ -1,0 +1,7 @@
+select 
+	ACTION,
+	TMST,
+	MODIFIED_BY_USER_ID,
+	MARKET,
+	ATTRIBUTE 
+from ${tableType}_market_attributes

@@ -1,0 +1,69 @@
+[{
+	"name": "ODKey",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "Orig",
+	"type": "STRING",
+	"size": 3
+}, {
+	"name": "Dest",
+	"type": "STRING",
+	"size": 3
+}, {
+	"name": "ElapsedTime",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "SvcType",
+	"type": "STRING",
+	"size": 1
+}, {
+	"name": "OpODKey",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "NumCnx",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "NumStops",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "FreqCount",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "DaysOfOp",
+	"type": "STRING",
+	"size": 7
+}, {
+	"name": "NonStopMiles",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "LegKey1",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "LegKey2",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "LegKey3",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "LegKey4",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "LegKey5",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "Passengers",
+	"type": "FLOAT",
+	"size": 4
+}]

@@ -1,0 +1,5 @@
+delete from ${tableName} where TYPE=? 
+and ID_NAME=? 
+and USER_ID=? 
+and VERSION=? 
+and PARTITION=?

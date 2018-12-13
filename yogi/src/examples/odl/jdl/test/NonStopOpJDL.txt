@@ -1,0 +1,89 @@
+[{
+	"name": "LegKey",
+	"type": "INTEGER",
+	"size": 8
+}, {
+	"name": "LegType",
+	"type": "CHAR",
+	"size": 1
+}, {
+	"name": "MktAirline",
+	"type": "STRING",
+	"size": 2
+}, {
+	"name": "MktFlightNum",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "EquipCode",
+	"type": "STRING",
+	"size": 3
+}, {
+	"name": "TRC",
+	"type": "CHAR",
+	"size": 1
+}, {
+	"name": "DepartureAirportCode",
+	"type": "STRING",
+	"size": 3
+}, {
+	"name": "DepartureTime",
+	"type": "TIME",
+	"size": 4
+}, {
+	"name": "DepartureGMTTime",
+	"type": "TIME",
+	"size": 4
+}, {
+	"name": "DepartureGMTOffset",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "ArrivalAirportCode",
+	"type": "STRING",
+	"size": 3
+}, {
+	"name": "ArrivalTime",
+	"type": "TIME",
+	"size": 4
+}, {
+	"name": "ArrivalGMTTime",
+	"type": "TIME",
+	"size": 4
+}, {
+	"name": "ArrivalGMTOffset",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "ElapsedMinutes",
+	"type": "INTEGER",
+	"size": 5
+}, {
+	"name": "DayAdjust",
+	"type": "INTEGER",
+	"size": 1
+}, {
+	"name": "DaysOfOp",
+	"type": "STRING",
+	"size": 7
+}, {
+	"name": "FreqCount",
+	"type": "INTEGER",
+	"size": 1
+}, {
+	"name": "OpAirline",
+	"type": "STRING",
+	"size": 2
+}, {
+	"name": "OpFlightNum",
+	"type": "INTEGER",
+	"size": 4
+}, {
+	"name": "NonStopMiles",
+	"type": "INTEGER",
+	"size": 5
+}, {
+	"name": "OpLegKey",
+	"type": "INTEGER",
+	"size": 8
+}]

@@ -1,0 +1,4 @@
+delete from ${tableName} where TMST=?
+and ABC=?
+and PQRS=?
+and XYZ=? 

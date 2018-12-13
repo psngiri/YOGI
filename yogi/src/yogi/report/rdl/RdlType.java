@@ -1,0 +1,18 @@
+package yogi.report.rdl;
+
+public enum RdlType {
+	BYTE,
+	CHAR,
+	SHORT,
+	INTEGER,
+	STRING,
+	TIME,
+	FLOAT,
+	DOUBLE,
+	POSITIVE_INTEGER,
+	FREQUENCY,
+	YYYY_MM_DD_DATE,
+	DDMMMYYYY_DATE,
+	UC_STRING,
+	STRING_ANY_LENGTH;
+}

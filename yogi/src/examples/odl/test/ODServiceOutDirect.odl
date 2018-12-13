@@ -1,0 +1,462 @@
+interface esOperationalODServiceOut
+<POS="0",SIZE="1",VALUE=" ">
+{
+  key ODkey;
+
+  attribute char    serviceType;            <POS="0", SIZE="1">
+  attribute integer ODkey;                  <POS="1",  SIZE="9">
+  attribute string  NSflag;                 <POS="10", SIZE="1">
+  attribute char    IBflag;                 <POS="11", SIZE="1">
+  attribute string  departureAirportCode;   <POS="12", SIZE="3">
+  attribute string  departureCityCode;      <POS="15", SIZE="3">
+  attribute string  departureAirportCountryCode;   <POS="18", SIZE="3">
+  attribute string  arrivalAirportCode;     <POS="21", SIZE="3">
+  attribute string  arrivalCityCode;        <POS="24", SIZE="3">
+  attribute string  arrivalAirportCountryCode;     <POS="27", SIZE="3">
+  attribute string  arrivalHour;            <POS="30", SIZE="2">
+  attribute string  arrivalMinute;          <POS="32", SIZE="2">
+  attribute string  arrivalGMTHour;         <POS="34", SIZE="2">
+  attribute string  arrivalGMTMinute;       <POS="36", SIZE="2">
+  attribute string  departureHour;          <POS="38", SIZE="2">
+  attribute string  departureMinute;        <POS="40", SIZE="2">
+  attribute string  departureGMTHour;       <POS="42", SIZE="2">
+  attribute string  departureGMTMinute;     <POS="44", SIZE="2">
+  attribute integer elapsedMinutes;         <POS="46", SIZE="5">
+  attribute integer serviceTypeCode;        <POS="51", SIZE="5">
+  attribute integer numberOfConnections;    <POS="56", SIZE="5">
+  attribute integer numberOfStops;          <POS="61", SIZE="5">
+  attribute char    categoryType;           <POS="66", SIZE="1">
+  attribute integer frequencyCount;         <POS="67", SIZE="5">
+  attribute integer GCDMiles;               <POS="72", SIZE="5">
+  attribute integer itineraryMiles;         <POS="77", SIZE="5">
+  attribute float   marketSize;             <POS="82", SIZE="14", DECIMAL="6">
+  attribute float   marketPreferencePoints; <POS="96", SIZE="14", DECIMAL="6">
+  attribute float   servicePoints;          <POS="110", SIZE="14", DECIMAL="6">
+  attribute float   marketShare;            <POS="124", SIZE="14", DECIMAL="6">
+  attribute float   demandPassengers;       <POS="138", SIZE="14", DECIMAL="6">
+  attribute float   marketSizeOutbound;     <POS="152", SIZE="14", DECIMAL="6">
+  attribute float   serviceQsiOutbound;     <POS="166", SIZE="14", DECIMAL="7">
+  attribute float   marketShareOutbound;    <POS="180", SIZE="14", DECIMAL="6">
+  attribute float   demandPassengersOutbound; <POS="194", SIZE="14", DECIMAL="6">
+  attribute float   marketSizeReturn;       <POS="208", SIZE="14", DECIMAL="6">
+  attribute float   serviceQsiReturn;       <POS="222", SIZE="14", DECIMAL="7">
+  attribute float   marketShareReturn;      <POS="236", SIZE="14", DECIMAL="6">
+  attribute float   demandPassengersReturn; <POS="250", SIZE="14", DECIMAL="6">
+  attribute float   passengersAfterSpill;   <POS="264", SIZE="14", DECIMAL="6">
+  attribute float   spilledPassengers;        <POS="278", SIZE="14", DECIMAL="6">
+  attribute float   passengersMarketSpill;  <POS="292", SIZE="14", DECIMAL="6">
+  attribute float   recapturedPassengers;    <POS="306", SIZE="14", DECIMAL="6">
+  attribute float   passengersLeft;         <POS="320", SIZE="14", DECIMAL="6">
+  attribute float   observedPassengers;     <POS="334", SIZE="14", DECIMAL="6">
+  attribute float   observedMarketShare;         <POS="348", SIZE="14", DECIMAL="6">
+  attribute float   passengersAfterSpillOutbound; <POS="362", SIZE="14", DECIMAL="6">
+  attribute float   spilledPassengersOutbound; <POS="376", SIZE="14", DECIMAL="6">
+  attribute float   recapturedPassengersOutbound; <POS="390", SIZE="14", DECIMAL="6">
+  attribute float   passengersLeftOutbound;  <POS="404", SIZE="14", DECIMAL="6">
+  attribute float   observedPassengersOutbound; <POS="418", SIZE="14", DECIMAL="6">
+  attribute float   observedMarketShareOutbound;  <POS="432", SIZE="14", DECIMAL="6">
+  attribute float   passengersAfterSpillReturn; <POS="446", SIZE="14", DECIMAL="6">
+  attribute float   spilledPassengersReturn;   <POS="460", SIZE="14", DECIMAL="6">
+  attribute float   recapturedPassengersReturn; <POS="474", SIZE="14", DECIMAL="6">
+  attribute float   passengersLeftReturn;   <POS="488", SIZE="14", DECIMAL="6">
+  attribute float   observedPassengersReturn; <POS="502", SIZE="14", DECIMAL="6">
+  attribute float   observedMarketShareReturn;   <POS="516", SIZE="14", DECIMAL="6">
+  attribute float   odAverageFare;            <POS="530", SIZE="14", DECIMAL="6">
+  attribute float   averageFareOutbound;    <POS="544", SIZE="14", DECIMAL="6">
+  attribute float   averageFareReturn;      <POS="558", SIZE="14", DECIMAL="6">
+  attribute float   revenue;                <POS="572", SIZE="14", DECIMAL="6">
+  attribute float   revenueOutbound;        <POS="586", SIZE="14", DECIMAL="6">
+  attribute float   revenueReturn;          <POS="600", SIZE="14", DECIMAL="6">
+  attribute integer legKey1;                <POS="614", SIZE="6">
+  attribute string3 legAirline1;            <POS="620", SIZE="3">
+  attribute integer legFlightNumber1;       <POS="623", SIZE="5">
+  attribute  integer    legItineraryNumber1;                <POS="628",  SIZE="5">
+  attribute  integer    legNumber1;                      <POS="633",  SIZE="3">
+  attribute  string3    departureAirportCode1;           <POS="636",  SIZE="3">
+  attribute  string3    arrivalAirportCode1;             <POS="639",  SIZE="3">
+  attribute  string    departureHour1;                  <POS="642",  SIZE="2">
+  attribute  string    departureMinute1;                <POS="644",  SIZE="2">
+  attribute  string    arrivalHour1;                    <POS="646",  SIZE="2">
+  attribute  string    arrivalMinute1;                  <POS="648",  SIZE="2">
+  attribute  string3    equipCode1;                      <POS="650",SIZE="3">
+  attribute float   fareRatio1;             <POS="653", SIZE="14", DECIMAL="6">
+  attribute float   fare1;                  <POS="667", SIZE="14", DECIMAL="6">
+  attribute char    legType1;               <POS="681", SIZE="1">
+  attribute char    duplicateType1;         <POS="682", SIZE="1">
+  attribute integer legKey2;                <POS="683", SIZE="6">
+  attribute string3 legAirline2;            <POS="689", SIZE="3">
+  attribute integer legFlightNumber2;       <POS="692", SIZE="5">
+  attribute  integer    legItineraryNumber2;                <POS="697",  SIZE="5">
+  attribute  integer    legNumber2;                      <POS="702",  SIZE="3">
+  attribute  string3    departureAirportCode2;           <POS="705",  SIZE="3">
+  attribute  string3    arrivalAirportCode2;             <POS="708",  SIZE="3">
+  attribute  string    departureHour2;                  <POS="711",  SIZE="2">
+  attribute  string    departureMinute2;                <POS="713",  SIZE="2">
+  attribute  string    arrivalHour2;                    <POS="715",  SIZE="2">
+  attribute  string    arrivalMinute2;                  <POS="717",  SIZE="2">
+  attribute  string3    equipCode2;                      <POS="719",SIZE="3">
+  attribute float   fareRatio2;             <POS="722", SIZE="14", DECIMAL="6">
+  attribute float   fare2;                  <POS="736", SIZE="14", DECIMAL="6">
+  attribute char    legType2;               <POS="750", SIZE="1">
+  attribute char    duplicateType2;         <POS="751", SIZE="1">
+  attribute integer legKey3;                <POS="752", SIZE="6">
+  attribute string3 legAirline3;            <POS="758", SIZE="3">
+  attribute integer legFlightNumber3;       <POS="761", SIZE="5">
+  attribute  integer    legItineraryNumber3;                <POS="766",  SIZE="5">
+  attribute  integer    legNumber3;                      <POS="771",  SIZE="3">
+  attribute  string3    departureAirportCode3;           <POS="774",  SIZE="3">
+  attribute  string3    arrivalAirportCode3;             <POS="777",  SIZE="3">
+  attribute  string    departureHour3;                  <POS="780",  SIZE="2">
+  attribute  string    departureMinute3;                <POS="782",  SIZE="2">
+  attribute  string    arrivalHour3;                    <POS="784",  SIZE="2">
+  attribute  string    arrivalMinute3;                  <POS="786",  SIZE="2">
+  attribute  string3    equipCode3;                      <POS="788", SIZE="3">
+  attribute float   fareRatio3;             <POS="791", SIZE="14", DECIMAL="6">
+  attribute float   fare3;                  <POS="805", SIZE="14", DECIMAL="6">
+  attribute char    legType3;               <POS="819", SIZE="1">
+  attribute char    duplicateType3;         <POS="820", SIZE="1">
+  attribute integer legKey4;                <POS="821", SIZE="6">
+  attribute string3 legAirline4;            <POS="827", SIZE="3">
+  attribute integer legFlightNumber4;       <POS="830", SIZE="5">
+  attribute  integer    legItineraryNumber4;                <POS="835",  SIZE="5">
+  attribute  integer    legNumber4;                      <POS="840",  SIZE="3">
+  attribute  string3    departureAirportCode4;           <POS="843",  SIZE="3">
+  attribute  string3    arrivalAirportCode4;             <POS="846",  SIZE="3">
+  attribute  string    departureHour4;                  <POS="849",  SIZE="2">
+  attribute  string    departureMinute4;                <POS="851",  SIZE="2">
+  attribute  string    arrivalHour4;                    <POS="853",  SIZE="2">
+  attribute  string    arrivalMinute4;                  <POS="855",  SIZE="2">
+  attribute  string3    equipCode4;                      <POS="857", SIZE="3">
+  attribute float   fareRatio4;             <POS="860", SIZE="14", DECIMAL="6">
+  attribute float   fare4;                  <POS="874", SIZE="14", DECIMAL="6">
+  attribute char    legType4;               <POS="888", SIZE="1">
+  attribute char    duplicateType4;         <POS="889", SIZE="1">
+  attribute integer legKey5;                <POS="890", SIZE="6">
+  attribute string3 legAirline5;            <POS="896", SIZE="3">
+  attribute integer legFlightNumber5;       <POS="899", SIZE="5">
+  attribute  integer    legItineraryNumber5;                <POS="904",  SIZE="5">
+  attribute  integer    legNumber5;                      <POS="909",  SIZE="3">
+  attribute  string3    departureAirportCode5;           <POS="912",  SIZE="3">
+  attribute  string3    arrivalAirportCode5;             <POS="915",  SIZE="3">
+  attribute  string    departureHour5;                  <POS="918",  SIZE="2">
+  attribute  string    departureMinute5;                <POS="920",  SIZE="2">
+  attribute  string    arrivalHour5;                    <POS="922",  SIZE="2">
+  attribute  string    arrivalMinute5;                  <POS="924",  SIZE="2">
+  attribute  string3    equipCode5;                      <POS="926", SIZE="3">
+  attribute float   fareRatio5;             <POS="929", SIZE="14", DECIMAL="6">
+  attribute float   fare5;                  <POS="943", SIZE="14", DECIMAL="6">
+  attribute char    legType5;               <POS="957", SIZE="1">
+  attribute char    duplicateType5;         <POS="958", SIZE="1">
+  attribute integer legKey6;                <POS="959", SIZE="6">
+  attribute string3 legAirline6;            <POS="965", SIZE="3">
+  attribute integer legFlightNumber6;       <POS="968", SIZE="5">
+  attribute  integer    legItineraryNumber6;                <POS="973",  SIZE="5">
+  attribute  integer    legNumber6;                      <POS="978",  SIZE="3">
+  attribute  string3    departureAirportCode6;           <POS="981",  SIZE="3">
+  attribute  string3    arrivalAirportCode6;             <POS="984",  SIZE="3">
+  attribute  string    departureHour6;                  <POS="987",  SIZE="2">
+  attribute  string    departureMinute6;                <POS="989",  SIZE="2">
+  attribute  string    arrivalHour6;                    <POS="991",  SIZE="2">
+  attribute  string    arrivalMinute6;                  <POS="993",  SIZE="2">
+  attribute  string3    equipCode6;                      <POS="995", SIZE="3">
+  attribute float   fareRatio6;             <POS="998", SIZE="14", DECIMAL="6">
+  attribute float   fare6;                  <POS="1012", SIZE="14", DECIMAL="6">
+  attribute char    legType6;               <POS="1026", SIZE="1">
+  attribute char    duplicateType6;         <POS="1027", SIZE="1">
+  attribute string  daysOfOperation;        <POS="1028", SIZE="7">
+  attribute float   totalDemandPassengersOutbound;          <POS="1035", SIZE="12",DECIMAL="6">
+  attribute float   totalDemandPassengersReturn;          <POS="1047", SIZE="12",DECIMAL="6">
+  attribute float   totalDemandPassengers;          <POS="1059", SIZE="12",DECIMAL="6">
+  attribute float   totalSpillOutbound;         <POS="1071", SIZE="12",DECIMAL="6">
+  attribute float   totalSpillReturn;         <POS="1083", SIZE="12",DECIMAL="6">
+  attribute float   totalSpill;         <POS="1095", SIZE="12",DECIMAL="6">
+  attribute float   totalObservedPassengersOutbound;        <POS="1107", SIZE="12",DECIMAL="6">
+  attribute float   totalObservedPassengersReturn;        <POS="1119", SIZE="12",DECIMAL="6">
+  attribute float   totalObservedPassengers;        <POS="1131", SIZE="12",DECIMAL="6">
+  attribute float   totalRecapturedPassengersOutbound;      <POS="1143", SIZE="12",DECIMAL="6">
+  attribute float   totalRecapturedPassengersReturn;      <POS="1155", SIZE="12",DECIMAL="6">
+  attribute float   totalRecapturedPassengers;      <POS="1167", SIZE="12",DECIMAL="6">
+  attribute float   totalRevenueOutbound;                   <POS="1179", SIZE="12",DECIMAL="6">
+  attribute float   totalRevenueReturn;                   <POS="1191", SIZE="12",DECIMAL="6">
+  attribute float   totalRevenue;                   <POS="1203", SIZE="12",DECIMAL="6">
+  attribute string  fareClass;                   <POS="1215", SIZE="33">
+  attribute string  fareCategory;                <POS="1248", SIZE="30">
+  attribute float   linkedDemandOutbound;        <POS="1278", SIZE="14",DECIMAL="6">
+  attribute float   linkedDemandReturn;          <POS="1292", SIZE="14",DECIMAL="6">
+  attribute float   linkedDemand;                <POS="1306", SIZE="14",DECIMAL="6">
+  attribute float   nonLinkedDemandOutbound;     <POS="1320", SIZE="14",DECIMAL="6">
+  attribute float   nonLinkedDemandReturn;       <POS="1334", SIZE="14",DECIMAL="6">
+  attribute float   nonLinkedDemand;             <POS="1348", SIZE="14",DECIMAL="6">
+  attribute integer operationalSchedSvcKey;      <POS="1362", SIZE="9">
+  attribute char    prevDay;                     <POS="1371", SIZE="1">
+}
+
+interface esDuplicateODServiceOut
+<POS="0",SIZE="1",VALUE="*">
+{
+  key ODkey;
+
+  attribute char    serviceType;            <POS="0", SIZE="1">
+  attribute integer ODkey;                  <POS="1",  SIZE="9">
+  attribute string  NSflag;                 <POS="10", SIZE="1">
+  attribute char    IBflag;                 <POS="11", SIZE="1">
+  attribute string  departureAirportCode;   <POS="12", SIZE="3">
+  attribute string  departureCityCode;      <POS="15", SIZE="3">
+  attribute string  departureAirportCountryCode;   <POS="18", SIZE="3">
+  attribute string  arrivalAirportCode;     <POS="21", SIZE="3">
+  attribute string  arrivalCityCode;        <POS="24", SIZE="3">
+  attribute string  arrivalAirportCountryCode;     <POS="27", SIZE="3">
+  attribute string  arrivalHour;            <POS="30", SIZE="2">
+  attribute string  arrivalMinute;          <POS="32", SIZE="2">
+  attribute string  arrivalGMTHour;         <POS="34", SIZE="2">
+  attribute string  arrivalGMTMinute;       <POS="36", SIZE="2">
+  attribute string  departureHour;          <POS="38", SIZE="2">
+  attribute string  departureMinute;        <POS="40", SIZE="2">
+  attribute string  departureGMTHour;       <POS="42", SIZE="2">
+  attribute string  departureGMTMinute;     <POS="44", SIZE="2">
+  attribute integer elapsedMinutes;         <POS="46", SIZE="5">
+  attribute integer serviceTypeCode;        <POS="51", SIZE="5">
+  attribute integer numberOfConnections;    <POS="56", SIZE="5">
+  attribute integer numberOfStops;          <POS="61", SIZE="5">
+  attribute char    categoryType;           <POS="66", SIZE="1">
+  attribute integer frequencyCount;         <POS="67", SIZE="5">
+  attribute integer GCDMiles;               <POS="72", SIZE="5">
+  attribute integer itineraryMiles;         <POS="77", SIZE="5">
+  attribute float   marketSize;             <POS="82", SIZE="14", DECIMAL="6">
+  attribute float   marketPreferencePoints; <POS="96", SIZE="14", DECIMAL="6">
+  attribute float   servicePoints;          <POS="110", SIZE="14", DECIMAL="6">
+  attribute float   marketShare;            <POS="124", SIZE="14", DECIMAL="6">
+  attribute float   demandPassengers;       <POS="138", SIZE="14", DECIMAL="6">
+  attribute float   marketSizeOutbound;     <POS="152", SIZE="14", DECIMAL="6">
+  attribute float   serviceQsiOutbound;     <POS="166", SIZE="14", DECIMAL="7">
+  attribute float   marketShareOutbound;    <POS="180", SIZE="14", DECIMAL="6">
+  attribute float   demandPassengersOutbound; <POS="194", SIZE="14", DECIMAL="6">
+  attribute float   marketSizeReturn;       <POS="208", SIZE="14", DECIMAL="6">
+  attribute float   serviceQsiReturn;       <POS="222", SIZE="14", DECIMAL="7">
+  attribute float   marketShareReturn;      <POS="236", SIZE="14", DECIMAL="6">
+  attribute float   demandPassengersReturn; <POS="250", SIZE="14", DECIMAL="6">
+  attribute float   passengersAfterSpill;   <POS="264", SIZE="14", DECIMAL="6">
+  attribute float   spilledPassengers;        <POS="278", SIZE="14", DECIMAL="6">
+  attribute float   passengersMarketSpill;  <POS="292", SIZE="14", DECIMAL="6">
+  attribute float   recapturedPassengers;    <POS="306", SIZE="14", DECIMAL="6">
+  attribute float   passengersLeft;         <POS="320", SIZE="14", DECIMAL="6">
+  attribute float   observedPassengers;     <POS="334", SIZE="14", DECIMAL="6">
+  attribute float   observedMarketShare;         <POS="348", SIZE="14", DECIMAL="6">
+  attribute float   passengersAfterSpillOutbound; <POS="362", SIZE="14", DECIMAL="6">
+  attribute float   spilledPassengersOutbound; <POS="376", SIZE="14", DECIMAL="6">
+  attribute float   recapturedPassengersOutbound; <POS="390", SIZE="14", DECIMAL="6">
+  attribute float   passengersLeftOutbound;  <POS="404", SIZE="14", DECIMAL="6">
+  attribute float   observedPassengersOutbound; <POS="418", SIZE="14", DECIMAL="6">
+  attribute float   observedMarketShareOutbound;  <POS="432", SIZE="14", DECIMAL="6">
+  attribute float   passengersAfterSpillReturn; <POS="446", SIZE="14", DECIMAL="6">
+  attribute float   spilledPassengersReturn;   <POS="460", SIZE="14", DECIMAL="6">
+  attribute float   recapturedPassengersReturn; <POS="474", SIZE="14", DECIMAL="6">
+  attribute float   passengersLeftReturn;   <POS="488", SIZE="14", DECIMAL="6">
+  attribute float   observedPassengersReturn; <POS="502", SIZE="14", DECIMAL="6">
+  attribute float   observedMarketShareReturn;   <POS="516", SIZE="14", DECIMAL="6">
+  attribute float   odAverageFare;            <POS="530", SIZE="14", DECIMAL="6">
+  attribute float   averageFareOutbound;    <POS="544", SIZE="14", DECIMAL="6">
+  attribute float   averageFareReturn;      <POS="558", SIZE="14", DECIMAL="6">
+  attribute float   revenue;                <POS="572", SIZE="14", DECIMAL="6">
+  attribute float   revenueOutbound;        <POS="586", SIZE="14", DECIMAL="6">
+  attribute float   revenueReturn;          <POS="600", SIZE="14", DECIMAL="6">
+  attribute integer legKey1;                <POS="614", SIZE="6">
+  attribute string3 legAirline1;            <POS="620", SIZE="3">
+  attribute integer legFlightNumber1;       <POS="623", SIZE="5">
+  attribute  integer    legItineraryNumber1;                <POS="628",  SIZE="5">
+  attribute  integer    legNumber1;                      <POS="633",  SIZE="3">
+  attribute  string3    departureAirportCode1;           <POS="636",  SIZE="3">
+  attribute  string3    arrivalAirportCode1;             <POS="639",  SIZE="3">
+  attribute  string    departureHour1;                  <POS="642",  SIZE="2">
+  attribute  string    departureMinute1;                <POS="644",  SIZE="2">
+  attribute  string    arrivalHour1;                    <POS="646",  SIZE="2">
+  attribute  string    arrivalMinute1;                  <POS="648",  SIZE="2">
+  attribute  string3    equipCode1;                      <POS="650",SIZE="3">
+  attribute float   fareRatio1;             <POS="653", SIZE="14", DECIMAL="6">
+  attribute float   fare1;                  <POS="667", SIZE="14", DECIMAL="6">
+  attribute char    legType1;               <POS="681", SIZE="1">
+  attribute char    duplicateType1;         <POS="682", SIZE="1">
+  attribute integer legKey2;                <POS="683", SIZE="6">
+  attribute string3 legAirline2;            <POS="689", SIZE="3">
+  attribute integer legFlightNumber2;       <POS="692", SIZE="5">
+  attribute  integer    legItineraryNumber2;                <POS="697",  SIZE="5">
+  attribute  integer    legNumber2;                      <POS="702",  SIZE="3">
+  attribute  string3    departureAirportCode2;           <POS="705",  SIZE="3">
+  attribute  string3    arrivalAirportCode2;             <POS="708",  SIZE="3">
+  attribute  string    departureHour2;                  <POS="711",  SIZE="2">
+  attribute  string    departureMinute2;                <POS="713",  SIZE="2">
+  attribute  string    arrivalHour2;                    <POS="715",  SIZE="2">
+  attribute  string    arrivalMinute2;                  <POS="717",  SIZE="2">
+  attribute  string3    equipCode2;                      <POS="719",SIZE="3">
+  attribute float   fareRatio2;             <POS="722", SIZE="14", DECIMAL="6">
+  attribute float   fare2;                  <POS="736", SIZE="14", DECIMAL="6">
+  attribute char    legType2;               <POS="750", SIZE="1">
+  attribute char    duplicateType2;         <POS="751", SIZE="1">
+  attribute integer legKey3;                <POS="752", SIZE="6">
+  attribute string3 legAirline3;            <POS="758", SIZE="3">
+  attribute integer legFlightNumber3;       <POS="761", SIZE="5">
+  attribute  integer    legItineraryNumber3;                <POS="766",  SIZE="5">
+  attribute  integer    legNumber3;                      <POS="771",  SIZE="3">
+  attribute  string3    departureAirportCode3;           <POS="774",  SIZE="3">
+  attribute  string3    arrivalAirportCode3;             <POS="777",  SIZE="3">
+  attribute  string    departureHour3;                  <POS="780",  SIZE="2">
+  attribute  string    departureMinute3;                <POS="782",  SIZE="2">
+  attribute  string    arrivalHour3;                    <POS="784",  SIZE="2">
+  attribute  string    arrivalMinute3;                  <POS="786",  SIZE="2">
+  attribute  string3    equipCode3;                      <POS="788", SIZE="3">
+  attribute float   fareRatio3;             <POS="791", SIZE="14", DECIMAL="6">
+  attribute float   fare3;                  <POS="805", SIZE="14", DECIMAL="6">
+  attribute char    legType3;               <POS="819", SIZE="1">
+  attribute char    duplicateType3;         <POS="820", SIZE="1">
+  attribute integer legKey4;                <POS="821", SIZE="6">
+  attribute string3 legAirline4;            <POS="827", SIZE="3">
+  attribute integer legFlightNumber4;       <POS="830", SIZE="5">
+  attribute  integer    legItineraryNumber4;                <POS="835",  SIZE="5">
+  attribute  integer    legNumber4;                      <POS="840",  SIZE="3">
+  attribute  string3    departureAirportCode4;           <POS="843",  SIZE="3">
+  attribute  string3    arrivalAirportCode4;             <POS="846",  SIZE="3">
+  attribute  string    departureHour4;                  <POS="849",  SIZE="2">
+  attribute  string    departureMinute4;                <POS="851",  SIZE="2">
+  attribute  string   arrivalHour4;                    <POS="853",  SIZE="2">
+  attribute  string    arrivalMinute4;                  <POS="855",  SIZE="2">
+  attribute  string3    equipCode4;                      <POS="857", SIZE="3">
+  attribute float   fareRatio4;             <POS="860", SIZE="14", DECIMAL="6">
+  attribute float   fare4;                  <POS="874", SIZE="14", DECIMAL="6">
+  attribute char    legType4;               <POS="888", SIZE="1">
+  attribute char    duplicateType4;         <POS="889", SIZE="1">
+  attribute integer legKey5;                <POS="890", SIZE="6">
+  attribute string3 legAirline5;            <POS="896", SIZE="3">
+  attribute integer legFlightNumber5;       <POS="899", SIZE="5">
+  attribute  integer    legItineraryNumber5;                <POS="904",  SIZE="5">
+  attribute  integer    legNumber5;                      <POS="909",  SIZE="3">
+  attribute  string3    departureAirportCode5;           <POS="912",  SIZE="3">
+  attribute  string3    arrivalAirportCode5;             <POS="915",  SIZE="3">
+  attribute  string    departureHour5;                  <POS="918",  SIZE="2">
+  attribute  string   departureMinute5;                <POS="920",  SIZE="2">
+  attribute  string    arrivalHour5;                    <POS="922",  SIZE="2">
+  attribute  string    arrivalMinute5;                  <POS="924",  SIZE="2">
+  attribute  string3    equipCode5;                      <POS="926", SIZE="3">
+  attribute float   fareRatio5;             <POS="929", SIZE="14", DECIMAL="6">
+  attribute float   fare5;                  <POS="943", SIZE="14", DECIMAL="6">
+  attribute char    legType5;               <POS="957", SIZE="1">
+  attribute char    duplicateType5;         <POS="958", SIZE="1">
+  attribute integer legKey6;                <POS="959", SIZE="6">
+  attribute string3 legAirline6;            <POS="965", SIZE="3">
+  attribute integer legFlightNumber6;       <POS="968", SIZE="5">
+  attribute  integer    legItineraryNumber6;                <POS="973",  SIZE="5">
+  attribute  integer    legNumber6;                      <POS="978",  SIZE="3">
+  attribute  string3    departureAirportCode6;           <POS="981",  SIZE="3">
+  attribute  string3    arrivalAirportCode6;             <POS="984",  SIZE="3">
+  attribute  string    departureHour6;                  <POS="987",  SIZE="2">
+  attribute  string    departureMinute6;                <POS="989",  SIZE="2">
+  attribute  string   arrivalHour6;                    <POS="991",  SIZE="2">
+  attribute  string    arrivalMinute6;                  <POS="993",  SIZE="2">
+  attribute  string3    equipCode6;                      <POS="995", SIZE="3">
+  attribute float   fareRatio6;             <POS="998", SIZE="14", DECIMAL="6">
+  attribute float   fare6;                  <POS="1012", SIZE="14", DECIMAL="6">
+  attribute char    legType6;               <POS="1026", SIZE="1">
+  attribute char    duplicateType6;         <POS="1027", SIZE="1">
+  attribute string  daysOfOperation;        <POS="1028", SIZE="7">
+  attribute integer operationalODKey;       <POS="1035", SIZE="9">
+  attribute char    duplicateType;          <POS="1044", SIZE="1">
+  attribute string  fareClass;              <POS="1045", SIZE="33">
+  attribute string  fareCategory;           <POS="1078", SIZE="30">
+  attribute float   linkedDemandOutbound;   <POS="1108", SIZE="14",DECIMAL="6">
+  attribute float   linkedDemandReturn;     <POS="1122", SIZE="14",DECIMAL="6">
+  attribute float   linkedDemand;           <POS="1136", SIZE="14",DECIMAL="6">
+  attribute float   nonLinkedDemandOutbound;<POS="1150", SIZE="14",DECIMAL="6">
+  attribute float   nonLinkedDemandReturn;  <POS="1164", SIZE="14",DECIMAL="6">
+  attribute float   nonLinkedDemand;        <POS="1178", SIZE="14",DECIMAL="6">
+  attribute integer operationalSchedSvcKey; <POS="1192", SIZE="9">
+  attribute char    prevDay;                <POS="1201", SIZE="1">
+  attribute string  unused;                 <POS="1202", SIZE="170">
+}
+
+interface esODServiceOut
+<POS="0",SIZE="1",VALUE="X">
+{
+  key ODkey;
+
+  attribute integer ODkey;                  <POS="0",  SIZE="9">
+  attribute string  NSflag;                 <POS="9", SIZE="1">
+  attribute char    IBflag;                 <POS="10", SIZE="1">
+  attribute string  departureAirportCode;   <POS="11", SIZE="3">
+  attribute string  departureCityCode;      <POS="14", SIZE="3">
+  attribute string  departureAirportCountryCode;   <POS="17", SIZE="3">
+  attribute string  arrivalAirportCode;     <POS="20", SIZE="3">
+  attribute string  arrivalCityCode;        <POS="23", SIZE="3">
+  attribute string  arrivalAirportCountryCode;     <POS="26", SIZE="3">
+  attribute string  arrivalHour;            <POS="29", SIZE="2">
+  attribute string  arrivalMinute;          <POS="31", SIZE="2">
+  attribute string  arrivalGMTHour;         <POS="33", SIZE="2">
+  attribute string  arrivalGMTMinute;       <POS="35", SIZE="2">
+  attribute string  departureHour;          <POS="37", SIZE="2">
+  attribute string  departureMinute;        <POS="39", SIZE="2">
+  attribute string  departureGMTHour;       <POS="41", SIZE="2">
+  attribute string  departureGMTMinute;     <POS="43", SIZE="2">
+  attribute integer elapsedMinutes;         <POS="45", SIZE="5">
+  attribute integer serviceTypeCode;        <POS="50", SIZE="5">
+  attribute integer numberOfConnections;    <POS="55", SIZE="5">
+  attribute integer numberOfStops;          <POS="60", SIZE="5">
+  attribute char    categoryType;           <POS="65", SIZE="1">
+  attribute integer frequencyCount;         <POS="66", SIZE="5">
+  attribute integer GCDMiles;               <POS="71", SIZE="5">
+  attribute integer itineraryMiles;         <POS="76", SIZE="5">
+  attribute float   marketSize;             <POS="81", SIZE="14", DECIMAL="6">
+  attribute float   marketPreferencePoints; <POS="95", SIZE="14", DECIMAL="6">
+  attribute float   servicePoints;          <POS="109", SIZE="14", DECIMAL="6">
+  attribute float   marketShare;            <POS="123", SIZE="14", DECIMAL="6">
+  attribute float   demandPassengers;       <POS="137", SIZE="14", DECIMAL="6">
+  attribute float   marketSizeOutbound;     <POS="151", SIZE="14", DECIMAL="6">
+  attribute float   serviceQsiOutbound;     <POS="165", SIZE="14", DECIMAL="7">
+  attribute float   marketShareOutbound;    <POS="179", SIZE="14", DECIMAL="6">
+  attribute float   demandPassengersOutbound; <POS="193", SIZE="14", DECIMAL="6">
+  attribute float   marketSizeReturn;       <POS="207", SIZE="14", DECIMAL="6">
+  attribute float   serviceQsiReturn;       <POS="221", SIZE="14", DECIMAL="7">
+  attribute float   marketShareReturn;      <POS="235", SIZE="14", DECIMAL="6">
+  attribute float   demandPassengersReturn; <POS="249", SIZE="14", DECIMAL="6">
+  attribute float   passengersAfterSpill;   <POS="263", SIZE="14", DECIMAL="6">
+  attribute float   spilledPassengers;        <POS="277", SIZE="14", DECIMAL="6">
+  attribute float   passengersMarketSpill;  <POS="291", SIZE="14", DECIMAL="6">
+  attribute float   recapturedPassengers;    <POS="305", SIZE="14", DECIMAL="6">
+  attribute float   passengersLeft;         <POS="319", SIZE="14", DECIMAL="6">
+  attribute float   observedPassengers;     <POS="333", SIZE="14", DECIMAL="6">
+  attribute float   observedMarketShare;         <POS="347", SIZE="14", DECIMAL="6">
+  attribute float   passengersAfterSpillOutbound; <POS="361", SIZE="14", DECIMAL="6">
+  attribute float   spilledPassengersOutbound; <POS="375", SIZE="14", DECIMAL="6">
+  attribute float   recapturedPassengersOutbound; <POS="389", SIZE="14", DECIMAL="6">
+  attribute float   passengersLeftOutbound;  <POS="403", SIZE="14", DECIMAL="6">
+  attribute float   observedPassengersOutbound; <POS="417", SIZE="14", DECIMAL="6">
+  attribute float   observedMarketShareOutbound;  <POS="431", SIZE="14", DECIMAL="6">
+  attribute float   passengersAfterSpillReturn; <POS="445", SIZE="14", DECIMAL="6">
+  attribute float   spilledPassengersReturn;   <POS="459", SIZE="14", DECIMAL="6">
+  attribute float   recapturedPassengersReturn; <POS="473", SIZE="14", DECIMAL="6">
+  attribute float   passengersLeftReturn;   <POS="487", SIZE="14", DECIMAL="6">
+  attribute float   observedPassengersReturn; <POS="501", SIZE="14", DECIMAL="6">
+  attribute float   observedMarketShareReturn;   <POS="515", SIZE="14", DECIMAL="6">
+  attribute float   odAverageFare;            <POS="529", SIZE="14", DECIMAL="6">
+  attribute float   averageFareOutbound;    <POS="543", SIZE="14", DECIMAL="6">
+  attribute float   averageFareReturn;      <POS="557", SIZE="14", DECIMAL="6">
+  attribute float   revenue;                <POS="571", SIZE="14", DECIMAL="6">
+  attribute float   revenueOutbound;        <POS="585", SIZE="14", DECIMAL="6">
+  attribute float   revenueReturn;          <POS="599", SIZE="14", DECIMAL="6">
+  attribute integer legKey1;                <POS="613", SIZE="6">
+  attribute float   fareRatio1;             <POS="619", SIZE="14", DECIMAL="6">
+  attribute float   fare1;                  <POS="633", SIZE="14", DECIMAL="6">
+  attribute integer legKey2;                <POS="647", SIZE="6">
+  attribute float   fareRatio2;             <POS="653", SIZE="14", DECIMAL="6">
+  attribute float   fare2;                  <POS="667", SIZE="14", DECIMAL="6">
+  attribute integer legKey3;                <POS="681", SIZE="6">
+  attribute float   fareRatio3;             <POS="687", SIZE="14", DECIMAL="6">
+  attribute float   fare3;                  <POS="701", SIZE="14", DECIMAL="6">
+  attribute integer legKey4;                <POS="715", SIZE="6">
+  attribute float   fareRatio4;             <POS="721", SIZE="14", DECIMAL="6">
+  attribute float   fare4;                  <POS="735", SIZE="14", DECIMAL="6">
+  attribute integer legKey5;                <POS="749", SIZE="6">
+  attribute float   fareRatio5;             <POS="755", SIZE="14", DECIMAL="6">
+  attribute float   fare5;                  <POS="769", SIZE="14", DECIMAL="6">
+  attribute integer legKey6;                <POS="783", SIZE="6">
+  attribute float   fareRatio6;             <POS="789", SIZE="14", DECIMAL="6">
+  attribute float   fare6;                  <POS="803", SIZE="14", DECIMAL="6">
+  attribute string  daysOfOperation;        <POS="817", SIZE="7">
+}
