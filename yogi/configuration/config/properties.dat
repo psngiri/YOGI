@@ -1,0 +1,7 @@
+com.aa.cp.base.stats.memory.MemoryUsageCollector:DefaultLevel=FINE
+com.aa.cp.base.util.logging.SimpleFormatter:WriteTimeStamp=false
+com.aa.cp.base.util.logging.SimpleFormatter:WriteClassAndMethodNames=false
+com.aa.cp.base.util.logging.SimpleFormatter:WriteStackTrace=true
+com.aa.cp.base.app.ApplicationProperties:ConfigDirectoryLocation=~/config
+com.aa.cp.remote.client.app.MultiServerCommandExecutor;setServerTypeEqualsCommandServerAddressesColonPortNumbers=DomesticPRE=localhost:6080,InternationalPRE=localhost:5081
+#com.aa.cp.base.io.resource.db.SimpleDbResource:JDBCUrl=jdbc:oracle:thin:PRI_APP/PRIdevNgpApp_99@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=rmdeva.tul.aa.com)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=NGPDEV_SVC.TUL.AA.COM)))

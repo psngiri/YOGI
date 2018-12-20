@@ -1,0 +1,255 @@
+<!-- NOTE: JUNIT_HOME can be replaced by the junit.lib and junit.lib.hudson paths below. -->
+<property name="JUNIT_HOME" value="C:\eclipse2\plugins\org.junit_3.8.2.v20080602-1318"/>
+<property name="deployment.host" value="samurai.corp.amrcorp.com"/>
+<property name="deployment.home" value="/net/jurassic/osm"/>
+<property name="jvm.arg" value="-d32"/>
+
+<path id="emma.lib">
+    <pathelement location="../JAF/lib/test/emma/emma.jar"/>
+    <pathelement location="../JAF/lib/test/emma/emma_ant.jar"/>
+</path>
+
+<path id="emma.lib.hudson">
+    <pathelement location="../../JAF/workspace/lib/test/emma/emma.jar"/>
+    <pathelement location="../../JAF/workspace/lib/test/emma/emma_ant.jar"/>
+</path>
+
+<property name="junit.version" value="4.8.2"/>
+
+<path id="junit.lib">
+    <pathelement location="../JAF/lib/test/junit-${junit.version}.jar"/>
+</path>
+
+<path id="junit.lib.hudson">
+    <pathelement location="../../JAF/workspace/lib/test/junit-${junit.version}.jar"/>
+</path>
+
+<target name="help">
+    <echo message="Please run: $ ant -v -projecthelp"/>
+</target>
+
+<target name="init" description="Initialize, make preparations for the build">
+    <property name="build.type" value=""/>
+    <mkdir dir="classes"/>
+</target>
+
+<target name="clean" description="Prepare for a fresh build">
+    <delete dir="classes"/>
+</target>
+
+<target name="deleteTempConfigFiles">
+    <echo message="build.type: ${build.type}"/>
+    <delete file="configuration/${build.type}/config/capacities.dat"/>
+    <delete file="configuration/${build.type}/config/propertyAlias.dat"/>
+    <delete file="configuration/${build.type}/config/commonProperties.dat"/>
+</target>
+
+<target name="build" depends="clean, init">
+    <echo message="${ant.project.name}: ${ant.file}"/>
+    <echo message="JAVA_HOME is set to ${java.home}"/>
+    <echo message="ANT_HOME is set to ${ant.home}"/>
+    <javac destdir="classes"
+        debug="on"
+        compiler="javac1.5"
+        optimize="on">
+        <src path="src"/>
+        <classpath refid="project.classpath"/>
+    </javac>
+    <copy todir="classes">
+        <fileset dir="src" excludes="**/*.java"/>
+    </copy>
+</target>
+
+<target name="prepare" description="--> prepare">
+    <echo message="build.type: ${build.type}"/>
+    <copy file="configuration/config/capacities.dat" todir="configuration/${build.type}/config" />
+    <copy file="configuration/config/propertyAlias.dat" todir="configuration/${build.type}/config" />
+    <copy file="configuration/config/commonProperties.dat" todir="configuration/${build.type}/config" />
+</target>
+
+<target name="prodPrepare" description="--> prepare for production">
+    <property name="build.type" value="prod"/>
+</target>
+
+<target name="prodArchive" depends="prodPrepare, archive, deleteTempConfigFiles"  description="--> Archive for production"/>
+
+<target name="stagePrepare" description="--> prepare for Stage">
+    <property name="build.type" value="stage"/>
+</target>
+
+<target name="stageArchive" depends="stagePrepare, archive, deleteTempConfigFiles" description="--> Archive for Stage"/>
+
+<target name="devPrepare" description="--> prepare for development testing">
+    <property name="build.type" value="dev"/>
+</target>
+
+<target name="devArchive" depends="devPrepare, archive, deleteTempConfigFiles" description="--> Archive for development testing "/>
+
+<target name="localPrepare" description="--> prepare for development testing">
+    <property name="build.type" value="local"/>
+</target>
+
+<target name="archive" depends="build, prepare" description="--> build Jar">
+    <tstamp/>
+    <jar destfile="${application.name}${build.type}.jar">
+        <fileset dir="classes" excludes="**/*Test.class"/>
+        <fileset dir="configuration/${build.type}" includes="**/config/*"/>
+        <manifest>
+            <attribute name="Built-By" value="${user.name}"/>
+            <attribute name="Timestamp" value="${DSTAMP} ${TSTAMP}"/>
+            <attribute name="Version" value="${build.tag}"/>
+        </manifest>
+    </jar>
+</target>
+
+<target name="prodConfigArchive" depends="prodPrepare, configArchive, deleteTempConfigFiles" description="--> Archive for production"/>
+<target name="stageConfigArchive" depends="stagePrepare, configArchive, deleteTempConfigFiles" description="--> Archive for Stage"/>
+<target name="devConfigArchive" depends="devPrepare, configArchive, deleteTempConfigFiles" description="--> Archive for development testing "/>
+<target name="localConfigArchive" depends="localPrepare, configArchive, deleteTempConfigFiles" description="--> Archive for local testing "/>
+
+<target name="configArchive" depends="prepare" description="--> build Jar">
+    <tstamp/>
+    <jar destfile="${application.name}${build.type}Config.jar">
+        <fileset dir="configuration/${build.type}" includes="**/config/*"/>
+        <manifest>
+            <attribute name="Built-By" value="${user.name}"/>
+            <attribute name="Timestamp" value="${DSTAMP} ${TSTAMP}"/>
+            <attribute name="Version" value="${build.tag}"/>
+        </manifest>
+    </jar>
+</target>
+
+<target name="jar">
+	<delete file="${application.name}${build.type}.jar"/>
+    <jar destfile="${application.name}${build.type}.jar">
+        <fileset dir="classes" excludes="**/*Test.class"/>
+        <manifest>
+            <attribute name="Built-By" value="${user.name}"/>
+            <attribute name="Timestamp" value="${DSTAMP} ${TSTAMP}"/>
+            <attribute name="Version" value="${build.tag}"/>
+        </manifest>
+    </jar>
+</target>
+
+<target name="libArchive" depends="build, jar"/>
+
+<target name="archiveSource" depends="" description="--> build Source Jar">
+    <jar destfile="${application.name}Src.jar">
+        <fileset dir="src" includes="**/*.java"/>
+        <manifest>
+            <attribute name="Built-By" value="${user.name}"/>
+        </manifest>
+    </jar>
+</target>
+
+<target name="ftp" depends="archive">
+    <scp file="${application.name}.jar"
+        todir="933983@${deployment.host}:${deployment.home}"
+        password="guest9"
+        sftp="true" />
+</target>
+
+<target name="runTests" depends="build">
+    <junit printsummary="yes" haltonfailure="no" failureproperty="tests.failed">
+        <formatter type="plain"/>
+        <batchtest fork="no" todir="../test/reports">
+            <fileset dir="src" includes="**/*Test.java" excludes="**/*Acceptance*Test*,**/*Acceptence*Test*"/>
+        </batchtest>
+        <classpath refid="project.classpath"/>
+    </junit>
+    <fail if="tests.failed" message="Some tests failed, stopping build."/>
+</target>
+
+<target name="runTestsForHudson" depends="build">
+    <delete dir="test"/>
+    <mkdir dir="test/reports"/>
+    
+    <junit printsummary="yes" haltonfailure="no" failureproperty="tests.failed">
+        <formatter type="xml"/>
+        <batchtest fork="no" todir="test/reports">
+            <fileset dir="src" includes="**/*Test.java" excludes="**/*Acceptance*Test*,**/*Acceptence*Test*"/>
+        </batchtest>
+        <classpath refid="project.classpath"/>
+        <jvmarg line="${jvm.arg}"/>
+    </junit>
+</target>
+
+<target name="-emma-instrument">
+    <mkdir dir="test/instrumented-classes"/>
+    <mkdir dir="test/coverage"/>
+    <emma>
+        <instr destdir="test/instrumented-classes"
+            metadatafile="test/coverage/metadata.emma"
+            merge="yes"
+            instrpathref="emma.instrumentation.path">
+            <filter excludes="*Test*"/>
+        </instr>
+    </emma>
+</target>
+
+<target name="-emma-report">
+    <mkdir dir="test/coverage/reports"/>
+    <emma>
+        <report sourcepath="src">
+            <fileset dir="test/coverage">
+                <include name="*.emma"/>
+            </fileset>
+            <html outfile="test/coverage/reports/coverage.html"/>
+            <xml outfile="test/coverage/reports/coverage.xml"/>
+            <property name="report.html.out.encoding" value="UTF-8"/>
+        </report>
+    </emma>
+</target>
+
+<target name="runTestsWithCoverage" depends="build"
+    description="Build the system and run tests to determine level of code coverage">
+
+    <taskdef resource="emma_ant.properties" classpathref="emma.lib"/>
+    <delete dir="test"/>
+    <mkdir dir="test/reports"/>
+
+    <antcall target="-emma-instrument"/>
+
+    <junit printsummary="yes" haltonfailure="no" failureproperty="tests.failed">
+        <formatter type="xml"/>
+        <batchtest fork="no" todir="test/reports">
+            <fileset dir="src" includes="**/*Test.java"/>
+        </batchtest>
+        <classpath>
+            <path refid="emma.lib"/>
+            <pathelement location="test/instrumented-classes"/>
+            <path refid="project.classpath"/>
+        </classpath>
+        <sysproperty key="emma.coverage.out.file" value="test/coverage/coverage.emma"/>
+        <sysproperty key="emma.coverage.out.merge" value="true"/>
+    </junit>
+    <fail if="tests.failed" message="Some tests failed, stopping build."/>
+
+    <antcall target="-emma-report"/>
+</target>
+
+<target name="runTestsWithCoverageForHudson" depends="build"
+    description="Build the system and run tests to determine level of code coverage">
+
+    <taskdef resource="emma_ant.properties" classpathref="emma.lib.hudson"/>
+    <delete dir="test"/>
+    <mkdir dir="test/reports"/>
+
+    <antcall target="-emma-instrument"/>
+    <junit printsummary="yes" haltonfailure="no" failureproperty="tests.failed">
+        <formatter type="xml"/>
+        <batchtest fork="no" todir="test/reports">
+            <fileset dir="src" includes="**/*Test.java"/>
+        </batchtest>
+        <classpath>
+            <path refid="emma.lib.hudson"/>
+            <pathelement location="test/instrumented-classes"/>
+            <path refid="project.classpath"/>
+        </classpath>
+        <sysproperty key="emma.coverage.out.file" value="test/coverage/coverage.emma"/>
+        <sysproperty key="emma.coverage.out.merge" value="true"/>
+        <jvmarg line="${jvm.arg}"/>
+    </junit>
+
+    <antcall target="-emma-report"/>
+</target>

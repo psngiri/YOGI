@@ -1,0 +1,3 @@
+com.aa.cp.base.util.logging.Logging;setLevel=SetLoggingLevel
+com.aa.cp.base.app.ApplicationProperties:EmployeeID=EmployeeID
+com.aa.cp.base.app.ApplicationProperties:TaskID=TaskID

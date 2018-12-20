@@ -1,0 +1,8 @@
+com.aa.cp.base.stats.memory.MemoryUsageCollector:DefaultLevel=INFO
+com.aa.cp.base.util.logging.SimpleFormatter:WriteTimeStamp=false
+com.aa.cp.base.util.logging.SimpleFormatter:WriteClassAndMethodNames=false
+com.aa.cp.base.util.logging.SimpleFormatter:WriteStackTrace=true
+
+com.aa.cp.base.app.ApplicationProperties:ConfigDirectoryLocation=~/config
+com.aa.cp.remote.client.app.MultiServerCommandExecutor;setServerTypeEqualsCommandServerAddressesColonPortNumbers=DomesticPRE=rmpris01.pdc.aa.com:5080,InternationalPRE=localhost:5081
+com.aa.cp.base.io.resource.db.SimpleDbResource:JDBCUrl=jdbc:oracle:thin:weblogic/weblogic@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=rmodbs04-vip.pdc.aa.com)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=rmodbs02-vip.pdc.aa.com)(PORT=1521))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ngps.pdc.aa.com)))
